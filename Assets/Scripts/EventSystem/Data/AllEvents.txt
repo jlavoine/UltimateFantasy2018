@@ -1,0 +1,14 @@
+{
+  "One": {
+    "EventId": "One",
+    "EventType": "Logging",
+    "Properties": {
+      "messageToLog": "hi"
+    }
+  },
+  "Two": {
+    "EventId": "Two",
+    "EventType": "b",
+    "Properties": null
+  }
+}
