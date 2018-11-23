@@ -14,6 +14,8 @@ public class Character : MonoBehaviour {
         e1.EventId = "One";
         e1.Properties = new Dictionary<string, string>();
         e1.Properties.Add( "messageToLog", "hi" );
+        e1.Triggers = new List<TriggerData>();
+        e1.Triggers.Add( new TriggerData() { Equality = TriggerEquality.EQUALS, Key = "key", TargetValue = 0 } );
         EventData e2 = new EventData();
         e2.EventType = "b";
         e2.EventId = "Two";

@@ -5,7 +5,7 @@ public class LogEvent : GameEvent {
 
     private ILogger _logger;
 
-    public LogEvent( ILogger logger, IEventData data ) : base( data ) {
+    public LogEvent( ILogger logger, IEventData data, ITriggerManager triggerManager ) : base( data, triggerManager ) {
         _logger = logger;
     }
 

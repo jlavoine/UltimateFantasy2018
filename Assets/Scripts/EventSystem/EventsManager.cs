@@ -20,7 +20,7 @@ public class EventsManager : MonoBehaviour {
 
         if (data != null ) {
             if (data.EventType == EventData.LOG_EVENT_TYPE) {
-                return new LogEvent( new EditorLogger(), data );
+                return new LogEvent( new EditorLogger(), data, TriggerManagerObject.Inst );
             }
         }
 

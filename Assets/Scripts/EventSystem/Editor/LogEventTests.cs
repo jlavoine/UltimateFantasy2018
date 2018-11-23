@@ -4,15 +4,17 @@ using NSubstitute;
 public class LogEventTests {
     private ILogger MockLogger;
     private IEventData MockData;
+    private ITriggerManager MockTriggerManager;
 
     [SetUp]
     public void BeforeTest() {
         MockLogger = Substitute.For<ILogger>();
         MockData = Substitute.For<IEventData>();
+        MockTriggerManager = Substitute.For<ITriggerManager>();
     }
 
     private LogEvent CreateSystem() {
-        return new LogEvent( MockLogger, MockData );
+        return new LogEvent( MockLogger, MockData, MockTriggerManager );
     }
 
     [Test]

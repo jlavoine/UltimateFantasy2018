@@ -2,6 +2,8 @@
 
 public interface IEventData {
     string GetProperty( string key );
+
+    List<ITriggerData> GetTriggers();
 }
 
 public class EventData : IEventData {
@@ -11,6 +13,7 @@ public class EventData : IEventData {
     public string EventId;
     public string EventType;
     public Dictionary<string, string> Properties;
+    public List<TriggerData> Triggers;
 
     public string GetProperty( string key ) {
         string property = UNKNOWN_PROPERTY;
@@ -20,5 +23,15 @@ public class EventData : IEventData {
         }
 
         return property;
+    }
+
+    public List<ITriggerData> GetTriggers() {
+        List<ITriggerData> triggers = new List<ITriggerData>();
+
+        foreach(TriggerData trigger in Triggers ) {
+            triggers.Add( trigger );
+        }
+
+        return triggers;
     }
 }

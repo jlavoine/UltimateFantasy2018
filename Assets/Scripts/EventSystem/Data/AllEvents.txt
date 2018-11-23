@@ -1,14 +1,16 @@
 {
   "One": {
-    "EventId": "One",
+    "EventId": "HallwayTest",
     "EventType": "Logging",
     "Properties": {
       "messageToLog": "hi"
-    }
-  },
-  "Two": {
-    "EventId": "Two",
-    "EventType": "b",
-    "Properties": null
+    },
+    "Triggers": [
+      {
+        "Key": "MainStory",
+        "Equality": 1,
+        "TargetValue": 1
+      }
+    ]
   }
 }
