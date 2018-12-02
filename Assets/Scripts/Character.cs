@@ -26,11 +26,31 @@ public class Character : MonoBehaviour {
         UnityEngine.Debug.LogError( JsonConvert.SerializeObject( events ) );
     }
 
+    private bool _movedThisFrame = false;
+    private Vector3 _prevPos;
+
     void Update() {
         Vector3 move = new Vector3( Input.GetAxis( "Horizontal" ), 0, Input.GetAxis( "Vertical" ) );
+        if ( move != Vector3.zero ) {
+            //Debug.LogError( "BEFORE " + transform.position.ToString("F4") );
+            _movedThisFrame = true;
+            _prevPos = transform.position;
+        } else {
+            _movedThisFrame = false;
+        }
+
         _controller.Move( move * Time.deltaTime * Speed );
-        if ( move != Vector3.zero )
+
+        if ( move != Vector3.zero ) {
             transform.forward = move;
+        }
+    }
+
+    void LateUpdate() {
+        if (_movedThisFrame) {
+            Vector3 diff = transform.position - _prevPos;
+            CameraManagerMonoB.Inst.CameraManager.PlayerMoved( diff );
+        }
     }
 
 }
