@@ -26,5 +26,19 @@
         "TargetValue": 1
       }
     ]
+  },
+    "CamTest2": {
+    "EventId": "CamTest2",
+    "EventType": "MoveCamera",
+    "Properties": {
+      "targetCamera": "DefaultCamera"
+    },
+    "Triggers": [
+      {
+        "Key": "MainStory",
+        "Equality": 1,
+        "TargetValue": 1
+      }
+    ]
   }
 }
