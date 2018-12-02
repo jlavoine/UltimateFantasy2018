@@ -8,6 +8,7 @@ public interface IEventData {
 
 public class EventData : IEventData {
     public const string LOG_EVENT_TYPE = "Logging";
+    public const string MOVE_CAMERA_TYPE = "MoveCamera";
     public const string UNKNOWN_PROPERTY = "???";
 
     public string EventId;

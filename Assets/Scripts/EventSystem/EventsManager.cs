@@ -19,8 +19,10 @@ public class EventsManager : MonoBehaviour {
         EventData data = _allEvents[key];
 
         if (data != null ) {
-            if (data.EventType == EventData.LOG_EVENT_TYPE) {
+            if ( data.EventType == EventData.LOG_EVENT_TYPE ) {
                 return new LogEvent( new EditorLogger(), data, TriggerManagerObject.Inst );
+            } else if ( data.EventType == EventData.MOVE_CAMERA_TYPE ) {
+                return new MoveCameraEvent( CameraManagerMonoB.Inst.CameraManager, data, TriggerManagerObject.Inst );
             }
         }
 

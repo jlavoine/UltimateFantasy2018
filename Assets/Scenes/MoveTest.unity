@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea67e99493b00b45a4cd18e546cc837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EventId: One
+  EventId: CamTest
 --- !u!23 &1290172381
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -708,15 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b6271fd99209b4f880f531d2634b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCharacter: {fileID: 724430841}
-  ShouldUpdate: 1
-  TargetTest: {fileID: 0}
-  Original: {fileID: 0}
-  Speed: 1
-  IsMain: 0
-  TurningRate: 30
-  TotalTime: 1
-  smoothTime: 0.3
 --- !u!124 &1665720126
 Behaviour:
   m_ObjectHideFlags: 0
@@ -876,15 +867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b6271fd99209b4f880f531d2634b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCharacter: {fileID: 724430841}
-  ShouldUpdate: 1
-  TargetTest: {fileID: 0}
-  Original: {fileID: 0}
-  Speed: 1
-  IsMain: 0
-  TurningRate: 30
-  TotalTime: 1
-  smoothTime: 0.3
 --- !u!124 &1906137155
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1050,15 +1032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b6271fd99209b4f880f531d2634b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCharacter: {fileID: 724430841}
-  ShouldUpdate: 1
-  TargetTest: {fileID: 1906137152}
-  Original: {fileID: 1665720123}
-  Speed: 1
-  IsMain: 1
-  TurningRate: 30
-  TotalTime: 1
-  smoothTime: 0.3
 --- !u!114 &2122247520
 MonoBehaviour:
   m_ObjectHideFlags: 0

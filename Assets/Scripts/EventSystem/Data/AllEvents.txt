@@ -12,5 +12,19 @@
         "TargetValue": 1
       }
     ]
+  },
+    "CamTest": {
+    "EventId": "CamTest",
+    "EventType": "MoveCamera",
+    "Properties": {
+      "targetCamera": "BehindCamera"
+    },
+    "Triggers": [
+      {
+        "Key": "MainStory",
+        "Equality": 1,
+        "TargetValue": 1
+      }
+    ]
   }
 }
