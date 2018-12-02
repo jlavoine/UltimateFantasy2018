@@ -16,7 +16,8 @@ public class CameraManagerTests {
 
         for (int i = 0; i < count;  ++i ) {
             IFollowPlayerCamera mockCamera = Substitute.For<IFollowPlayerCamera>();
-            mockCameras.Add( mockCamera );
+            mockCamera.GetName().Returns( "MockCamera_" + i );
+            mockCameras.Add( mockCamera );            
         }
 
         return mockCameras;
@@ -24,6 +25,16 @@ public class CameraManagerTests {
 
     private CameraManager CreateSystem() {
         return new CameraManager(MockActiveCamera);
+    }
+
+    [Test]
+    public void WhenMovingActiveCameraToTarget_ActiveCameraMovesToTarget() {
+        CameraManager systemUnderTest = CreateSystem();
+        systemUnderTest.CamerasFollowingPlayer = CreateFollowCameras( 3 );
+
+        systemUnderTest.MoveActiveCameraToTarget( "MockCamera_2" );
+
+        MockActiveCamera.Received().MoveToCamera( systemUnderTest.CamerasFollowingPlayer[2] );
     }
 
 	[Test]
