@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public interface IActiveCamera {
     void MoveToCamera( IFollowPlayerCamera camera );
@@ -14,7 +12,6 @@ public class ActiveCamera : MonoBehaviour, IActiveCamera {
     private Vector3 _startPos;
     private float _startTime;
     private Quaternion _startRotation = Quaternion.identity;
-    private Quaternion _targetRotation = Quaternion.identity;
     private bool _isMoving = false;
     private IFollowPlayerCamera _moveToTarget;
 
