@@ -12,4 +12,8 @@ public class LogEvent : GameEvent {
     public override void Execute() {
         _logger.Log( LogSeverity.Info, LOG_TYPE, _data.GetProperty( MESSAGE_PROPERTY ) );
     }
+
+    public override void CleanUpAfterExecution() {
+        _logger.Log( LogSeverity.Info, LOG_TYPE, _data.GetProperty( MESSAGE_PROPERTY ) + "(Cleanup)" );
+    }
 }

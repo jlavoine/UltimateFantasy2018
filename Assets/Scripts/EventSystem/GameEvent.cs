@@ -1,6 +1,7 @@
 ﻿
 public interface IGameEvent {
-    void TryToExecute();
+    bool TryToExecute();
+    void CleanUpAfterExecution();
 }
 
 public abstract class GameEvent : IGameEvent {
@@ -13,11 +14,15 @@ public abstract class GameEvent : IGameEvent {
         _triggerManager = triggerManager;
     }
 
-    public void TryToExecute() {
+    public bool TryToExecute() {
         if ( _triggerManager.DoesPass( _data.GetTriggers() ) ) {
             Execute();
+            return true;
+        } else {
+            return false;
         }
     }
 
     public abstract void Execute();
+    public virtual void CleanUpAfterExecution() { }
 }

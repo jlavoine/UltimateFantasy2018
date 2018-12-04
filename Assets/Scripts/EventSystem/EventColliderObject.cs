@@ -3,10 +3,19 @@
 public class EventColliderObject : MonoBehaviour {
     public string EventId;
 
+    
+
+    private EventColliderController _controller;
+
+    void Start() {
+        _controller = new EventColliderController( EventsManager.Inst.GetEvent( EventId ) );
+    }
+
     public void OnTriggerEnter( Collider obj ) {
-        IGameEvent gameEvent = EventsManager.Inst.GetEvent( EventId );
-        if (gameEvent != null ) {
-            gameEvent.TryToExecute();
-        }
+        _controller.OnTriggerEnter();
+    }
+
+    public void OnTriggerExit( Collider obj ) {
+        _controller.OnTriggerExit();
     }
 }
